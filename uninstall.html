@@ -6,7 +6,6 @@
     <title>Feedback Form</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Только стили для iframe и базовой структуры */
         body, html {
             margin: 0;
             padding: 0;
@@ -16,7 +15,7 @@
         }
 
         .content {
-            height: calc(100% - 120px);
+            height: calc(100% - 180px); /* Увеличил отступ для большего заголовка */
         }
 
         iframe {
@@ -27,9 +26,12 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="subtitle">We're sorry to see you go</div>
-    </div>
+    <main class="container">
+        <div class="header">
+            <h1><span class="youtube-text">YouTube</span> Tag Extractor</h1>
+            <div class="subtitle">We're sorry to see you go</div>
+        </div>
+    </main>
     <div class="content">
         <iframe 
             src="https://docs.google.com/forms/d/e/1FAIpQLScH_BGWlqdv9l66qtWHsNKRS-8eUoLNbjiG0UCqoGtghJOdeQ/viewform?embedded=true">
