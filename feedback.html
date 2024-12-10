@@ -14,11 +14,14 @@
             overflow: hidden;
         }
         .content {
-            height: calc(100% - 180px); /* Увеличил отступ для большего заголовка */
+            height: calc(100% - 120px); /* Уменьшил отступ */
+        }
+        .header {
+            padding: 20px 0; /* Уменьшил padding заголовка */
         }
         iframe {
             width: 100%;
-            height: 100%;
+            height: 800px; /* Фиксированная высота для iframe */
             border: none;
         }
     </style>
@@ -30,7 +33,7 @@
         </div>
     </main>
     <div class="content">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdiUy6waI_zM-VmzLz9yjnZ6leXcm22qeEr_ypdmMF2mNnng/viewform?embedded=true" width="640" height="760" frameborder="0" marginheight="0" marginwidth="0">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdiUy6waI_zM-VmzLz9yjnZ6leXcm22qeEr_ypdmMF2mNnng/viewform?embedded=true">
             Loading…
         </iframe>
     </div>
