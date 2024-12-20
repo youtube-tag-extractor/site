@@ -193,6 +193,51 @@ h2 {
     font-size: 0.9rem;
 }
 
+.key-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feature-box h3 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.feature-box p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .key-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-box {
+        padding: 1.5rem;
+    }
+}
+
 /* Animations */
 @keyframes pulse {
     0% {
