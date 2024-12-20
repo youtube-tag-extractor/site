@@ -303,12 +303,12 @@
                 document.body.removeChild(iframe);
             }, 1000);
 
-            // Скрываем сообщение об успехе через 5 секунд
+            // Скрываем сообщение об успехе через 10 секунд
             setTimeout(() => {
                 successMessage.classList.remove('visible');
                 setTimeout(() => {
                     successMessage.style.display = 'none';
-                }, 300); // Ждем окончания анимации
+                }, 600); // Ждем окончания анимации
             }, 5000);
 
             return false;
