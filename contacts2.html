@@ -129,12 +129,26 @@
 
        .success-message {
            display: none;
-           color: #28a745;
+           color: white;
+           background-color: #4BB543;  /* Приятный зеленый цвет */
+           /* Альтернатива: background-color: #3498db; -- Приятный голубой цвет */
            padding: 1rem;
-           margin-top: 1rem;
-           background: #d4edda;
+           margin-bottom: 1.5rem;
            border-radius: 4px;
            text-align: center;
+           opacity: 0;
+           transform: translateY(-20px);
+           transition: opacity 0.3s ease, transform 0.3s ease;
+           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+       }
+
+       .success-message.visible {
+           opacity: 1;
+           transform: translateY(0);
+       }
+
+       .contact-form {
+           transition: transform 0.3s ease;
        }
 
        .footer {
@@ -207,6 +221,10 @@
        
        <p>Have questions about YouTube Tag Extractor? Need help with the extension? Or maybe you have suggestions for improvement? We'd love to hear from you! Fill out the form below, and we'll get back to you as soon as possible.</p>
        
+       <div id="successMessage" class="success-message">
+           Message sent successfully! We'll get back to you soon. 📨
+       </div>
+       
        <form id="customForm" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf2m5NtfYtPG1JrwjSgmvtPhYY9YR_DbgwiqAlRCVhBSqBmzA/formResponse" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -273,7 +291,12 @@
             
             // Очищаем форму и показываем сообщение
             this.reset();
-            document.getElementById('successMessage').style.display = 'block';
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            // Добавляем небольшую задержку перед добавлением класса для анимации
+            setTimeout(() => {
+                successMessage.classList.add('visible');
+            }, 10);
             
             // Удаляем iframe через небольшую задержку
             setTimeout(() => {
@@ -282,7 +305,10 @@
 
             // Скрываем сообщение об успехе через 5 секунд
             setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
+                successMessage.classList.remove('visible');
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 300); // Ждем окончания анимации
             }, 5000);
 
             return false;
