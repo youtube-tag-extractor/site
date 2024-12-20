@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Tag Extractor - Home page</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .install-btn {
+            background: #ee6e73;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .install-btn:hover {
+            background: #e25d63;
+        }
+
+        .footer {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ee6e73;
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
+    </style>
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV85EC5KG3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BV85EC5KG3');
+    </script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(99250441, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/99250441" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="images/YouTube Tag Extractor - WS Logo.png" alt="YouTube Tag Extractor Logo">
+            <span>YouTube Tag Extractor</span>
+        </a>
+        <a href="#" class="install-btn">Install the extension</a>
+    </header>
+
+    <main class="container">
+        <div class="header">
+            <h1><b><span class="youtube-text">YouTube</span> Tag Extractor</b></h1>
+            <div class="subtitle"><b>Three simple clicks to level up your YouTube game! 🚀</b></div>
+        </div>
+        
+        <section class="features">
+            <div class="feature-card">
+                <h2>#1 - Reveal Hidden Tags</h2>
+                <p>Just open any YouTube video and boom! You'll see tags appear right under the video title 🎯</p>
+                <div class="feature-image">
+                    <img src="images/youtube tag extractor - UI screenshot 1-2-min.png" alt="youtube tag extractor - UI screenshot 1">
+                </div>
+                <a href="https://chromewebstore.google.com/" class="cta-button" target="_blank">
+                    Install from Chrome Web Store 🚀
+                </a>
+            </div>
+            <div class="feature-card">
+                <h2>#2 - Copy Tags Like a Pro</h2>
+                <p>Found winning tags? One click to copy them all for your next video 📋</p>
+                <div class="feature-image">
+                    <img src="images/youtube tag extractor - UI screenshot 2-2-min.png" alt="youtube tag extractor - UI screenshot 2">
+                </div>
+                <a href="https://chromewebstore.google.com/" class="cta-button" target="_blank">
+                    Install from Chrome Web Store 🚀
+                </a>
+            </div>
+            <div class="feature-card">
+                <h2>#3 - Discover Similar Content</h2>
+                <p>Click any tag to find similar videos using the same successful tags. Instant inspiration for your content 🔍</p>
+                <div class="feature-image">
+                    <img src="images/youtube tag extractor - UI screenshot 3-2-min.png" alt="youtube tag extractor - UI screenshot 3">
+                </div>
+                <a href="https://chromewebstore.google.com/" class="cta-button" target="_blank">
+                    Install from Chrome Web Store 🚀
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/instructions">Instructions</a>
+            <a href="/contact">Contact us</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+        </div>
+        <div class="copyright">
+            © 2024 YouTube Tag Extractor. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
