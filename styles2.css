@@ -1,10 +1,4 @@
-/* Reset and base styles */
-:root {
-    --youtube-red: #d62222;
-    --text-color: #333;
-    --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
+/* Base */
 * {
     margin: 0;
     padding: 0;
@@ -12,14 +6,33 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-body {
-    line-height: 1.6;
-    color: #333;
-    background: #f8f9fa;
+/* Variables */
+:root {
+    --youtube-red: #d62222;
+    --text-color: #333;
+    --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Header styles */
+/* Existing styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 .header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* New header styles with new class */
+.header-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,40 +70,24 @@ body {
     background: #e25d63;
 }
 
-/* Container and content styles */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.content {
+/* Content styles */
+.content-wrapper {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 0 auto;
     padding: 2rem;
     background: white;
     border-radius: 8px;
+    margin-top: 2rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 1.1rem;
 }
 
-/* Typography */
+/* Existing typography */
 h1 {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 1rem;
     color: var(--text-color);
-}
-
-.main-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin: 2rem 0 1rem;
 }
 
 .youtube-text {
@@ -103,11 +100,19 @@ h2 {
     color: var(--text-color);
 }
 
-/* Feature sections */
+/* Existing feature styles */
 .features {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+}
+
+/* New feature grid styles */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
 .feature-card {
@@ -115,6 +120,14 @@ h2 {
     border-radius: 24px;
     padding: 2rem;
     box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+/* New feature item styles */
+.feature-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
     text-align: center;
 }
 
@@ -142,7 +155,7 @@ h2 {
     display: block;
 }
 
-/* CTA Button */
+/* Button styles */
 .cta-button {
     background: var(--youtube-red);
     color: white;
@@ -160,6 +173,43 @@ h2 {
 .cta-button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(255,0,0,0.3);
+}
+
+/* Steps section */
+.steps {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+/* YouTube section */
+.youtube-section {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.youtube-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.youtube-logo {
+    width: 115px;
+    height: 115px;
+    margin: 2rem auto;
+    background: var(--youtube-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+.youtube-logo svg {
+    width: 58px;
+    height: 58px;
+    fill: white;
 }
 
 /* Footer */
@@ -191,51 +241,6 @@ h2 {
 .copyright {
     color: #999;
     font-size: 0.9rem;
-}
-
-.key-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.feature-box {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.feature-box h3 {
-    margin: 1rem 0;
-    font-size: 1.2rem;
-    color: #2c3e50;
-}
-
-.feature-box p {
-    color: #666;
-    font-size: 0.95rem;
-}
-
-.feature-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (max-width: 768px) {
-    .key-features {
-        grid-template-columns: 1fr;
-    }
-    
-    .feature-box {
-        padding: 1.5rem;
-    }
 }
 
 /* Animations */
