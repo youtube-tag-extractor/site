@@ -244,15 +244,48 @@
    </footer>
 
    <script>
-        document.getElementById('customForm').addEventListener('submit', function() {
-            // Показываем сообщение об успехе
+        document.getElementById('customForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Создаем скрытый iframe для отправки формы
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            
+            // Создаем форму в iframe
+            const form = iframe.contentDocument.createElement('form');
+            form.action = 'https://docs.google.com/forms/d/e/1FAIpQLSf2m5NtfYtPG1JrwjSgmvtPhYY9YR_DbgwiqAlRCVhBSqBmzA/formResponse';
+            form.method = 'POST';
+            
+            // Копируем все поля из нашей формы
+            const formData = new FormData(this);
+            for(let pair of formData.entries()) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = pair[0];
+                input.value = pair[1];
+                form.appendChild(input);
+            }
+            
+            // Добавляем форму в iframe и отправляем
+            iframe.contentDocument.body.appendChild(form);
+            form.submit();
+            
+            // Очищаем форму и показываем сообщение
+            this.reset();
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Удаляем iframe через небольшую задержку
             setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'block';
-                // Скрываем сообщение через 5 секунд
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
+                document.body.removeChild(iframe);
             }, 1000);
+
+            // Скрываем сообщение об успехе через 5 секунд
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+
+            return false;
         });
    </script>
    </script>
